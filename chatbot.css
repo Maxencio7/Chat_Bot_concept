@@ -1,0 +1,196 @@
+.closebtn .span button{
+    opacity: 1;
+    position: fixed;
+    text-align: center;
+  }
+  .mode_comment .span button{
+    opacity: 1;
+    position: fixed;
+    text-align: center;
+  }
+  .chatbot-toggler {
+    position: fixed;
+    right: 40px;
+    bottom: 35px;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    background: #dbe84a;
+    border-radius: 50%;
+    transition: all 0.1s ease;
+  }
+  .show-chatbot .chatbot-toggler {
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+  .chatbot-toggler ~ span {
+    position: absolute;
+  }
+  .show-chatbot .chatbot-toggler span:first-child,
+  .chatbot-toggler span {
+    opacity: 0;
+  }
+  .show-chatbot .chatbot-toggler span:last-child {
+    opacity: 1;
+  }
+  .chatbot { 
+    position: fixed;
+    right: 40px;
+    bottom: 100px;
+    width: 420px;
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 15px;
+    transform-origin: bottom right ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
+    transition: all 0.1s ease;
+
+  }
+  .show-chatbot .chatbot {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .chatbot header {
+    background-color: #dbe84a;
+    padding: 16px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .chatbot h2 {
+    color: #fff;
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .chatbot header span {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+  .chatbot .chatbox {
+    height: 80%;
+    overflow-y: auto;
+    padding: 30px 20px 100px;
+  }
+  .chatbox .chat {
+    display: flex;
+ 
+  }
+  .chatbox .incoming {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  .chatbox .incoming span {
+    height: 32px;
+    width: 32px;
+    align-self: flex-end;
+    background-color: #724ae8;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    padding: 5px 10px;
+    border-radius: 10px 0 10px 10px;
+    margin-right: 10px;
+  }
+  .chatbox .outgoing {
+    color: #000;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 15px;   
+  }
+  .chatbox .chat p {
+    color: #fff;
+    max-width: 75%;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    padding: 16px 20px;
+    border-radius: 10px 10px 0 10px;
+    background-color: #724ae8;
+  }
+  .chatbox .chat p.error{
+    color: #721c24;
+    background: #f2f2f2;
+    
+  }
+  .chatbox .incoming p {
+    color: #000;
+    background: #f2f2f2;
+    border-radius: 10px 10px 10px 0;
+  }
+  .chatbot .chat-input {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    gap: 3px;
+    background: #fff;
+    padding: 5px 9px;
+    border-top: 1px solid #ccc;
+  }
+  .chatbox .outgoing p {
+    background-color: #f2f2f2;
+    color: #000;
+    padding: 10px 15px;
+    }
+  
+  
+  .chat-input textarea {
+    height: 55px;
+    width: 100%;
+    border: none;
+    outline: none;
+    max-height: 180px;
+    font-size: 0.95rem;
+    resize: none;
+    padding: 16px 15px 16px 0;
+  }
+  .chat-input span {
+    align-self: flex-end;
+    height: 55px;
+    line-height: 55px;
+    color: #724ae8;
+    font-size: 1.35rem;
+    cursor: pointer;
+    visibility: hidden;
+    background: #fff;
+  }
+  .chat-input textarea:valid ~ span {
+    visibility: visible;
+  }
+  @media (max-width: 490px) {
+    .chatbot {
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+    }
+    .chatbot .chatbox {
+      height: 90%;
+    }
+    .chatbot header span {
+      display: block;
+    }
+  }
+  
